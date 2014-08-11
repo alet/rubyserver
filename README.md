@@ -1,6 +1,6 @@
 rubyserver Cookbook
 ===================
-This cookbook makes ruby server. Nginx, passenger, rvm, ruby, mysql | postgresql
+This cookbook makes ruby server. Nginx, passenger, rvm, ruby, mysql | postgresql, postfix.
 
 Requirements
 ------------
@@ -11,14 +11,24 @@ Ubuntu
 Attributes
 ----------
 #### rubyserver::default
+node['rubyserver']['user_password'] - www-data user password. User is for developers
+node['rubyserver']['db_root_password'] - databases root password
+
+node['rubyserver']['databases']['mysql']['username']
+node['rubyserver']['databases']['mysql']['password']
+node['rubyserver']['databases']['mysql']['database_name']
+node['rubyserver']['databases']['postgresql']['username']
+node['rubyserver']['databases']['postgresql']['password']
+node['rubyserver']['databases']['postgresql']['database_name'] - site database atributes
+
+node['rubyserver']['ruby']['versions'] - list of ruby versions setuped by rvm
+node['rubyserver']['ruby']['global_version'] - default version of ruby
 
 Usage
 -----
 #### rubyserver::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
-Just include `rubyserver` in your node's `run_list`:
+Include `rubyserver` in your node's `run_list`:
 
 ```json
 {
@@ -29,18 +39,6 @@ Just include `rubyserver` in your node's `run_list`:
 }
 ```
 
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
-
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Alexander Galato
