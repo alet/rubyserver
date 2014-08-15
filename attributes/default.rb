@@ -1,6 +1,8 @@
 #Ruby
-set['rvm']['rubies'] = ['1.9.3-p547']
-set['rvm']['default_ruby'] = node['rvm']['rubies'].first
+default['rubyserver']['ruby']['versions']=[ '1.9.3-p547' ]
+default['rubyserver']['ruby']['global_version'] = node['rubyserver']['ruby']['versions'][1]
+set['rvm']['rubies'] = node['rubyserver']['ruby']['versions']
+set['rvm']['default_ruby'] = node['rubyserver']['ruby']['global_version']
 set['rvm']['global_gems'] = [ 
 	{ 'name' => 'rake' }
 ]
