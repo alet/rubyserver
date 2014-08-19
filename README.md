@@ -25,7 +25,7 @@ node['rubyserver']['databases']['postgresql']['username']
 node['rubyserver']['databases']['postgresql']['password']  
 node['rubyserver']['databases']['postgresql']['database_name'] - site database atributes. If you spesify both database then will be installed both. PostgreSQL database will not create due to [COOK-1406](http://tickets.opscode.com/browse/COOK-1406), but you should point wich database install.
 
-node['rubyserver']['ruby']['versions'] - list of ruby versions setuped by rvm
+node['rubyserver']['ruby']['versions'] - list of ruby versions setuped by rvm  
 node['rubyserver']['ruby']['global_version'] - default version of ruby
 
 Usage
